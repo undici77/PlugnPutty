@@ -3,20 +3,14 @@ Open and close PuTTY session automatically when you plug and unplug USB CDC devi
 
 ## How it works
 - In this example I use a STM32 demo board and a VT100 serial terminal.
-
 ![Image 1](https://github.com/undici77/PlugnPutty/blob/master/images/image1.png)
 
 
-- Power on the board
-
+- Power on demo board and plug CDC USB cable
 ![Image 2](https://github.com/undici77/PlugnPutty/blob/master/images/image2.png)
 
-
-- Plug CDC USB and Putty appear automatically
-
+- Putty will appear automatically
 ![Image 3](https://github.com/undici77/PlugnPutty/blob/master/images/image3.png)
-
-
 
 ## Cretae Setup
 - Install Visual Studio 2015 or later
