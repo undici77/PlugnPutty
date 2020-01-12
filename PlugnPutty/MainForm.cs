@@ -48,14 +48,17 @@ namespace PlugnPutty
 		private PuttyProcessManager    _Putty_Process_Manager;
 		private ExternalProcessMonitor _External_Process_Monitor;
 		private Autostart              _Autostart;
+		private Log.APPEND_LOG		   _Append_Log;
 
 		/// @brief Form constructor
 		///
 		public MainForm()
 		{
+			_Append_Log = new Log.APPEND_LOG(AppendLog);
+
 			InitializeComponent();
 
-			Log.Instance.Init(App.LogPath, AppendLog);
+			Log.Instance.Init(App.LogPath, App.Name, InvokeAppendLog);
 			_Autostart = new Autostart(App.Name,  Application.ExecutablePath.ToString());
 
 			_Ini_File_Path = App.Path + App.Name + ".ini";
@@ -647,6 +650,20 @@ namespace PlugnPutty
 			catch (Exception ex)
 			{
 				Log.Instance.Catch(ex.Message);
+			}
+		}
+
+		/// @brief Add message to LogListBox
+		///
+		/// @param message messge to add
+		private void InvokeAppendLog(string message)
+		{
+			try
+			{
+				BeginInvoke(_Append_Log, message);
+			}
+			catch
+			{
 			}
 		}
 

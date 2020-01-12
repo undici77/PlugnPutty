@@ -111,7 +111,7 @@ public class IniFile
 				{
 					// Key="Value";Comment
 					match = regex_key_value_string_comment.Match(line);
-					Log.Instance.Debug(string.Format("Key [{0}]=[{1}];[{2}]", match.Groups[1].Value, match.Groups[2].Value, match.Groups[3].Value));
+					Log.Instance.Debug(string.Format("Key {0}=[1};{2}", match.Groups[1].Value, match.Groups[2].Value, match.Groups[3].Value));
 					temp_section.AddKey(match.Groups[1].Value).Value = match.Groups[2].Value;
 					temp_section.AddKey(match.Groups[1].Value).Comment = match.Groups[3].Value;
 					temp_section.AddKey(match.Groups[1].Value).Quotes = true;
@@ -120,7 +120,7 @@ public class IniFile
 				{
 					// Key="Value"
 					match = regex_key_value_string.Match(line);
-					Log.Instance.Debug(string.Format("Key [{0}]=\"[{1}]\"", match.Groups[1].Value, match.Groups[2].Value));
+					Log.Instance.Debug(string.Format("Key {0}=\"{1}\"", match.Groups[1].Value, match.Groups[2].Value));
 					temp_section.AddKey(match.Groups[1].Value).Value = match.Groups[2].Value;
 					temp_section.AddKey(match.Groups[1].Value).Quotes = true;
 				}
@@ -128,7 +128,7 @@ public class IniFile
 				{
 					// Key=Value;Comment
 					match = regex_key_value_comment.Match(line);
-					Log.Instance.Debug(string.Format("Key [{0}]=[{1}];[{2}]", match.Groups[1].Value, match.Groups[2].Value, match.Groups[3].Value));
+					Log.Instance.Debug(string.Format("Key {0}={1};{2}", match.Groups[1].Value, match.Groups[2].Value, match.Groups[3].Value));
 					temp_section.AddKey(match.Groups[1].Value).Value = match.Groups[2].Value;
 					temp_section.AddKey(match.Groups[1].Value).Comment = match.Groups[3].Value;
 					temp_section.AddKey(match.Groups[1].Value).Quotes = false;
@@ -137,14 +137,14 @@ public class IniFile
 				{
 					// Key=Value
 					match = regex_key_value.Match(line);
-					Log.Instance.Debug(string.Format("Key [{0}]=[{1}]", match.Groups[1].Value, match.Groups[2].Value));
+					Log.Instance.Debug(string.Format("Key {0}={1}", match.Groups[1].Value, match.Groups[2].Value));
 					temp_section.AddKey(match.Groups[1].Value).Value = match.Groups[2].Value;
 					temp_section.AddKey(match.Groups[1].Value).Quotes = false;
 				}
 				else if (temp_section != null)
 				{
 					//  Handle Key without value
-					Log.Instance.Debug(string.Format("Key [{0}]", line));
+					Log.Instance.Debug(string.Format("Key {0}", line));
 					temp_section.AddKey(line);
 				}
 				else
