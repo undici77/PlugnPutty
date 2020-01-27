@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Alessandro Barbieri")]
 [assembly: AssemblyProduct("PlugnPutty")]
-[assembly: AssemblyCopyright("Copyright © Alessandro Barbieri 2019")]
+[assembly: AssemblyCopyright("Copyright © Alessandro Barbieri 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

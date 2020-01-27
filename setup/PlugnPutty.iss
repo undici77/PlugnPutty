@@ -23,10 +23,9 @@ Compression=lzma
 SolidCompression=yes
 MinVersion=6.1.7600
 PrivilegesRequired=admin
-AppCopyright=Copyright (C) 2019 Alessandro Barbieri
+AppCopyright=Copyright (C) 2020 Alessandro Barbieri
 SetupIconFile=..\PlugnPutty\res\PlugnPuttyEnable.ico
-UninstallDisplayIcon=yes
-OutputDir=output\{#ApplicationVersion}
+UninstallDisplayIcon={app}\{#ApplicationFile}
 LicenseFile=license\license.rtf
 
 [Run]
