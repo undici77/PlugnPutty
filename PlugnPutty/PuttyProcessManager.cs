@@ -292,7 +292,7 @@ class PuttyProcessManager
 			{
 				lock (_Process_Dictionary)
 				{
-					_Process_Dictionary.Add(usb_device, process_data);
+					_Process_Dictionary[usb_device] = process_data;
 				}
 			}
 			catch (Exception)
